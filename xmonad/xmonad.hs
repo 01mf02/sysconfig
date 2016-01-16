@@ -28,10 +28,10 @@ main = xmonad $ xfceConfig
 	`additionalKeys`
 	[ ((0       , xK_Print), spawn "xfce4-screenshooter -f")
 	, ((mod1Mask, xK_Print), spawn "xfce4-screenshooter -w")
-	, ((mod1Mask .|. shiftMask, xK_End), spawn "systemctl poweroff")
+	, ((mod1Mask .|. shiftMask, xK_End), spawn "xfce4-session-logout --halt")
 	, ((mod4Mask, xK_f), spawn "exo-open --launch FileManager")
 	, ((mod4Mask, xK_w), spawn "exo-open --launch WebBrowser")
 	, ((mod4Mask, xK_m), spawn "exo-open --launch MailReader")
+	, ((mod4Mask, xK_a), spawn "audacious")
 	, ((mod4Mask, xK_b), spawn "transmission-gtk")
-	--, ((mod4Mask, xK_p), spawn "xfce4-display-settings")
 	]
