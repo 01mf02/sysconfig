@@ -31,9 +31,16 @@ let g:airline_powerline_fonts = 1
 " Enable mouse support for a(ll) modes
 set mouse=a
 
-" Copy text with mouse
-" See https://github.com/neovim/neovim/wiki/FAQ#copying-to-x11-primary-selection-with-the-mouse-doesnt-work
-vmap <LeftRelease> "*ygv
+if has('nvim')
+  " Copy text with mouse
+  " See https://github.com/neovim/neovim/wiki/FAQ#copying-to-x11-primary-selection-with-the-mouse-doesnt-work
+  vmap <LeftRelease> "*ygv
+endif
+
+if !has('nvim')
+  " GVim
+  set guifont=Monospace\ 12
+endif
 
 " use Bash-like filename completion
 set wildmode=longest,list,full
