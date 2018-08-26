@@ -26,7 +26,9 @@ colorscheme solarized
 
 " Powerline fonts for vim-airline at https://github.com/vim-airline/vim-airline
 " Install via: sudo apt-get install fonts-powerline
-let g:airline_powerline_fonts = 1
+" Does unfortunately show weird symbols on Ubuntu 18.04 with gvim ...
+" See: https://github.com/powerline/fonts/issues/281
+" let g:airline_powerline_fonts = 1
 
 " Enable mouse support for a(ll) modes
 set mouse=a
