@@ -8,30 +8,31 @@ import XMonad.Util.EZConfig
 -- let Whisker Menu float
 --myManageHook = composeAll [ className =? "Wrapper-1.0" --> doFloat ]
 
-main = xmonad $ xfceConfig
-	{ startupHook = startupHook xfceConfig >>
-	    -- make Java programs resize correctly by pretending we are a
-	    -- different WM (camouflage)
-	    setWMName "LG3D"
+main =
+  xmonad $ xfceConfig
+    { startupHook = startupHook xfceConfig >>
+        -- make Java programs resize correctly by pretending we are a
+        -- different WM (camouflage)
+        setWMName "LG3D"
 
-	--, manageHook    = myManageHook <+> manageHook xfceConfig
+    --, manageHook    = myManageHook <+> manageHook xfceConfig
 
-	  -- inherit layout from desktopConfig
-	, layoutHook = desktopLayoutModifiers $
-	    -- do not show window borders in fullscreen mode
-	    smartBorders $
-	    -- switch only between two tiling algorithms instead of three
-	    -- as in the default configuration
-	    Tall 1 (3/100) (1/2) ||| Full
-	, terminal = "exo-open --launch TerminalEmulator"
-	}
-	`additionalKeys`
-	[ ((0       , xK_Print), spawn "xfce4-screenshooter -f")
-	, ((mod1Mask, xK_Print), spawn "xfce4-screenshooter -w")
-	, ((mod1Mask .|. shiftMask, xK_End), spawn "xfce4-session-logout --halt")
-	, ((mod4Mask, xK_f), spawn "exo-open --launch FileManager")
-	, ((mod4Mask, xK_w), spawn "exo-open --launch WebBrowser")
-	, ((mod4Mask, xK_m), spawn "exo-open --launch MailReader")
-	, ((mod4Mask, xK_a), spawn "audacious")
-	, ((mod4Mask, xK_b), spawn "transmission-gtk")
-	]
+      -- inherit layout from desktopConfig
+    , layoutHook = desktopLayoutModifiers $
+        -- do not show window borders in fullscreen mode
+        smartBorders $
+        -- switch only between two tiling algorithms instead of three
+        -- as in the default configuration
+        Tall 1 (3/100) (1/2) ||| Full
+    , terminal = "exo-open --launch TerminalEmulator"
+    }
+    `additionalKeys`
+    [ ((0       , xK_Print), spawn "xfce4-screenshooter -f")
+    , ((mod1Mask, xK_Print), spawn "xfce4-screenshooter -w")
+    , ((mod1Mask .|. shiftMask, xK_End), spawn "xfce4-session-logout --halt")
+    , ((mod4Mask, xK_f), spawn "exo-open --launch FileManager")
+    , ((mod4Mask, xK_w), spawn "exo-open --launch WebBrowser")
+    , ((mod4Mask, xK_m), spawn "exo-open --launch MailReader")
+    , ((mod4Mask, xK_a), spawn "audacious")
+    , ((mod4Mask, xK_b), spawn "transmission-gtk")
+    ]
