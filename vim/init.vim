@@ -39,7 +39,7 @@ if has('nvim')
   vmap <LeftRelease> "*ygv
 else
   " GVim
-  set guifont=Monospace\ 12
+  set guifont=Liberation\ Mono\ 12
 endif
 
 " use Bash-like filename completion
