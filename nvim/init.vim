@@ -1,4 +1,5 @@
 " Pathogen plugin manager from https://github.com/tpope/vim-pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -6,20 +7,12 @@ filetype plugin indent on
 " Show name of currently edited file in terminal window name
 set title
 
-" Fix xfce4-terminal issue as in: https://github.com/neovim/neovim/issues/5990
-set guicursor=
-
-" Talking about xfce4-terminal:
-" To disable pasting with CTRL-SHIFT-v, check
-" Xfce -> Appearance -> Settings -> Enable editable accelerators.
-" Then, in xfce4-terminal, hover over Edit -> Paste and
-" press DEL to remove the shortcut.
-"
-" Furthermore, set Solarized as color theme in
-" Edit -> Preferences -> Colors -> Presets.
-
 " Disable folding
 set nofoldenable
+
+" vim2hs from https://github.com/dag/vim2hs
+let g:haskell_conceal_wide = 1
+let g:haskell_conceal_bad = 1
 
 " vim-pandoc from https://github.com/vim-pandoc/vim-pandoc
 " To enable omnicompletion (e.g. for literature), make sure that
@@ -27,9 +20,41 @@ set nofoldenable
 let g:pandoc#modules#disabled = ["folding"]
 
 " Use Solarized theme from https://github.com/altercation/vim-colors-solarized
+set termguicolors
 set background=dark
 colorscheme solarized
 
 " Powerline fonts for vim-airline at https://github.com/vim-airline/vim-airline
 " Install via: sudo apt-get install fonts-powerline
 let g:airline_powerline_fonts = 1
+
+" Enable mouse support for a(ll) modes
+set mouse=a
+
+" Copy text with mouse
+" See https://github.com/neovim/neovim/wiki/FAQ#copying-to-x11-primary-selection-with-the-mouse-doesnt-work
+vmap <LeftRelease> "*ygv
+
+" use Bash-like filename completion
+set wildmode=longest,list,full
+set wildmenu
+
+" highlight all search matches
+set hlsearch
+
+filetype indent on
+
+" use vim-airline from the start
+set laststatus=2
+
+" disable cursor blinking
+set guicursor=a:blinkon0
+
+" backspace in first character of line will go to previous line
+set backspace=indent,eol,start
+
+" spell checking
+autocmd BufNewFile,BufRead *.md set spell
+
+" upper-case ML file suffix (used in Isabelle source)
+autocmd BufNewFile,BufRead *.ML set filetype=sml
