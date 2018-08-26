@@ -35,9 +35,7 @@ if has('nvim')
   " Copy text with mouse
   " See https://github.com/neovim/neovim/wiki/FAQ#copying-to-x11-primary-selection-with-the-mouse-doesnt-work
   vmap <LeftRelease> "*ygv
-endif
-
-if !has('nvim')
+else
   " GVim
   set guifont=Monospace\ 12
 endif
