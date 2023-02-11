@@ -5,17 +5,12 @@ import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig
 
--- let Whisker Menu float
---myManageHook = composeAll [ className =? "Wrapper-1.0" --> doFloat ]
-
 main =
   xmonad $ xfceConfig
     { startupHook = startupHook xfceConfig >>
         -- make Java programs resize correctly by pretending we are a
         -- different WM (camouflage)
         setWMName "LG3D"
-
-    --, manageHook    = myManageHook <+> manageHook xfceConfig
 
       -- inherit layout from desktopConfig
     , layoutHook = desktopLayoutModifiers $
@@ -34,6 +29,5 @@ main =
     , ((mod4Mask, xK_w), spawn "exo-open --launch WebBrowser")
     , ((mod4Mask, xK_m), spawn "exo-open --launch MailReader")
     , ((mod4Mask, xK_p), spawn "xfce4-display-settings")
-    , ((mod4Mask, xK_a), spawn "audacious")
     , ((mod4Mask, xK_b), spawn "transmission-gtk")
     ]
