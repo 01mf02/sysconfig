@@ -16,6 +16,3 @@
 [submodule "nvim/bundle/vim-pathogen"]
 	path = vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "vim/bundle/elm-vim"]
-	path = vim/bundle/elm-vim
-	url = https://github.com/ElmCast/elm-vim
