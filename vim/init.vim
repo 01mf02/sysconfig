@@ -1,18 +1,20 @@
-" Pathogen plugin manager from https://github.com/tpope/vim-pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
 syntax on
+
+filetype plugin on
 filetype plugin indent on
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+"set shiftwidth=4
+" On pressing tab, insert 4 spaces
+"set expandtab
 
 " Show name of currently edited file in terminal window name
 set title
 
 " Disable folding
 set nofoldenable
-
-" vim2hs from https://github.com/dag/vim2hs
-let g:haskell_conceal_wide = 1
-let g:haskell_conceal_bad = 1
 
 " vim-pandoc from https://github.com/vim-pandoc/vim-pandoc
 " To enable omnicompletion (e.g. for literature), make sure that
@@ -39,7 +41,8 @@ if has('nvim')
   vmap <LeftRelease> "*ygv
 else
   " GVim
-  set guifont=Liberation\ Mono\ 12
+  set guifont=Liberation\ Mono\ 14
+  set linespace=2
 endif
 
 " use Bash-like filename completion
@@ -61,7 +64,8 @@ set guicursor=a:blinkon0
 set backspace=indent,eol,start
 
 " spell checking
-autocmd BufNewFile,BufRead *.md set spell
+autocmd BufNewFile,BufRead *.md  set spell
+autocmd BufNewFile,BufRead *.dj set spell
 
 " upper-case ML file suffix (used in Isabelle source)
 autocmd BufNewFile,BufRead *.ML set filetype=sml
