@@ -1,18 +1,12 @@
 [submodule "nvim/bundle/neovim-colors-solarized-truecolor-only"]
-	path = vim/bundle/neovim-colors-solarized-truecolor-only
+	path = vim/pack/all/start/neovim-colors-solarized-truecolor-only
 	url = https://github.com/frankier/neovim-colors-solarized-truecolor-only
-[submodule "nvim/bundle/vim2hs"]
-	path = vim/bundle/vim2hs
-	url = https://github.com/dag/vim2hs
 [submodule "nvim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim/pack/all/start/vim-airline
 	url = https://github.com/bling/vim-airline
 [submodule "nvim/bundle/vim-pandoc"]
-	path = vim/bundle/vim-pandoc
+	path = vim/pack/all/start/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc
 [submodule "nvim/bundle/vim-pandoc-syntax"]
-	path = vim/bundle/vim-pandoc-syntax
+	path = vim/pack/all/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-[submodule "nvim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
